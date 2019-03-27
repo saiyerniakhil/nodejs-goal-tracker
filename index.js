@@ -35,8 +35,7 @@ app.post("/removegoal",function(req,res) {
 app.get('/',function(req,res) {
 	res.render('index',{goal:goal,complete:complete});
 });
-
-app.listen(3000,function() {
+app.listen(process.env.PORT || 5000,function() {
 	console.log('App is live and listening on port 3000!');
 });
 
