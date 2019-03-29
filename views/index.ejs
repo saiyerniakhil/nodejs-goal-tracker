@@ -3,6 +3,7 @@
 		<title>My Goal tracker</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<style>
 		body {
 			height: 100%;
@@ -23,7 +24,11 @@
 	<body>
 			<h1 class="text-center"> Track your goals! </h1>
 	</br>
+
 		<div class="container text-center" id = "main">
+			
+			<div id="mode"><a href="#" id = "dark">Dark Mode</a> / <a href="#" id="light">Light Mode</a></div>
+			<br>
 			
 			<form action="/addgoal" method="POST">
 				<input  class="form-control input-sm" type="text" name ="newgoal" placeholder="add new goal"> &nbsp;
@@ -43,6 +48,19 @@
 
 				<li align="left"> <input type="checkbox" checked> <%= complete[i] %> </li>
 			<% } %>
+			<script>
+				$(document).ready(function() {
+				$("#dark").on("click",function(){
+					$("body").css("background-color", "#37474F");
+					$("body").css("color", "aliceblue");
+				});
+
+				$("#light").on("click",function(){
+					$("body").css("background-color", "#ECEFF1");
+					$("body").css("color", "black");
+				});
+			});
+			</script>
 		</div>
 	</body>
 </html>

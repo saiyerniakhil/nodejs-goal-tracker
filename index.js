@@ -30,7 +30,8 @@ app.post("/removegoal",function(req,res) {
 		}
 	}
 	res.redirect("/");
-}); 
+});
+
 
 app.get('/',function(req,res) {
 	res.render('index',{goal:goal,complete:complete});
